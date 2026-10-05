@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>گالری من</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    /* این بخش Flexbox است */
+    .gallery {
+      display: flex;            /* عناصر را کنار هم می‌چیند */
+      justify-content: center;  /* وسط‌چین افقی */
+      gap: 20px;                /* فاصله بین عکس‌ها */
+      flex-wrap: wrap;          /* اگر جا نشد، به خط بعد بروند */
+      margin-top: 30px;
+    }
+    .gallery img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;        /* عکس را بدون کشیدگی برش می‌زند */
+      border-radius: 10px;      /* گوشه‌های گرد */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s; /* نرمی تغییر اندازه */
+    }
+    /* وقتی موس روی عکس می‌رود */
+    .gallery img:hover {
+      transform: scale(1.1);    /* ۱۰٪ بزرگ‌تر می‌شود */
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>گالری تصاویر من</h1>
+  
+  <div class="gallery">
+    <img src="1.jpg" alt="تصویر ۱">
+    <img src="2.jpg" alt="تصویر ۲">
+    <img src="3.jpg" alt="تصویر ۳">
+  </div>
+</body>
+</html>

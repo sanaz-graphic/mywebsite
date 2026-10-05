@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>اولین وب‌سایت من</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    /* این بخش مربوط به جعبه سفید وسط صفحه است */
+    .profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* این خط عکس را دایره‌ای می‌کند */
+  object-fit: cover; /* جلوگیری از کشیده شدن عکس */
+  margin-bottom: 15px;
+  border: 3px solid #007bff; /* یک حاشیه آبی دور عکس */
+}
+    .card {
+      background-color: white;
+      width: 300px;
+      margin: 0 auto; /* این خط جعبه را وسط‌چین می‌کند */
+      padding: 20px;
+      border-radius: 10px; /* گوشه‌های گرد */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* سایه ملایم */
+    }
+    h1 {
+      color: blue;
+      margin-bottom: 10px;
+    }
+    p {
+      color: gray;
+      font-size: 18px;
+    }
+    /* استایل لیست مهارت‌ها */
+    ul {
+      list-style-type: none; /* حذف نقطه‌های کنار لیست */
+      padding: 0;
+    }
+    li {
+      background-color: #e0e0e0;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 5px;
+      color: #333;
+    }
+    /* استایل لینک */
+    a {
+      color: #007bff;
+      text-decoration: none; /* حذف خط زیر لینک */
+      display: inline-block;
+      margin-top: 15px;
+    }
+    a {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 15px;
+        transition: background-color 0.3s;
+    }
+    a:hover {
+        background-color: #0056b3;
+    }
+    li:hover {
+        background-color: #d0d0d0;
+        cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- این div یک جعبه می‌سازد که همه محتوا داخلش قرار می‌گیرد -->
+  <div class="card">
+    <h1>سلام دنیا!</h1>
+    <img src="profile.jpg" alt="عکس پروفایل من" class="profile-img">
+    <p>این اولین پاراگراف من است.</p>
+    
+    <!-- یک لیست از مهارت‌ها -->
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+    
+    <!-- یک لینک برای رفتن به گوگل -->
+    <a href="https://www.google.com" target="_blank">برو به گوگل</a>
+  </div>
+</body>
+</html>

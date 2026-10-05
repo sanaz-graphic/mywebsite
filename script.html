@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>شروع جاوااسکریپت</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 50px;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="myTitle">سلام! من یک عنوان هستم.</h1>
+  <p>روی دکمه زیر کلیک کن تا معجزه را ببینی!</p>
+  <button onclick="changeColor()">کلیک کن!</button>
+
+  <script>
+    // این یک تابع (Function) است. وقتی دکمه کلیک شود، این کد اجرا می‌شود.
+    function changeColor() {
+      var element = document.getElementById("myTitle"); // عنصر h1 را پیدا می‌کند
+      element.style.color = "red"; // رنگش را قرمز می‌کند
+      element.innerHTML = "تو موفق شدی! رنگم عوض شد!"; // متنش را عوض می‌کند
+    }
+  </script>
+</body>
+</html>

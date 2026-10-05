@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>لیست کارهای من</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin-top: 50px;
+    }
+    .container {
+      background-color: white;
+      width: 350px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 { color: #333; }
+    input {
+      padding: 10px;
+      width: 65%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #0056b3; }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      text-align: left;
+    }
+    li {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .delete-btn {
+      background-color: #dc3545;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+    .delete-btn:hover { background-color: #c82333; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>لیست کارهای من</h1>
+    <input type="text" id="taskInput" placeholder="یک کار جدید بنویس...">
+    <button onclick="addTask()">اضافه کن</button>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+  // وقتی صفحه باز می‌شود، کارهای قبلی را لود کن
+  window.onload = function() {
+    loadTasks();
+  };
+
+  function addTask() {
+    var input = document.getElementById("taskInput");
+    var taskText = input.value;
+
+    if (taskText === "") {
+      alert("لطفا یک کار بنویسید!");
+      return;
+    }
+
+    createTaskElement(taskText); // ساخت المان
+    saveTasks(); // ذخیره در حافظه
+    input.value = ""; // پاک کردن ورودی
+  }
+
+  // تابع ساخت یک تسک جدید
+  function createTaskElement(taskText) {
+    var li = document.createElement("li");
+    
+    var span = document.createElement("span");
+    span.textContent = taskText;
+    
+    var deleteBtn = document.createElement("button");
+    deleteBtn.className = "delete-btn";
+    deleteBtn.textContent = "حذف";
+    deleteBtn.onclick = function() {
+      li.remove(); // حذف از صفحه
+      saveTasks(); // به‌روزرسانی حافظه
+    };
+    
+    li.appendChild(span);
+    li.appendChild(deleteBtn);
+    
+    document.getElementById("taskList").appendChild(li);
+  }
+
+  // تابع ذخیره کارها در حافظه مرورگر
+  function saveTasks() {
+    var tasks = [];
+    var spans = document.querySelectorAll("#taskList li span");
+    spans.forEach(function(span) {
+      tasks.push(span.textContent);
+    });
+    localStorage.setItem("myTasks", JSON.stringify(tasks));
+  }
+
+  // تابع خواندن کارها از حافظه مرورگر
+  function loadTasks() {
+    var savedTasks = localStorage.getItem("myTasks");
+    if (savedTasks) {
+      var tasks = JSON.parse(savedTasks);
+      tasks.forEach(function(taskText) {
+        createTaskElement(taskText);
+      });
+    }
+  }
+</script>
+</body>
+</html>
