@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کارت پروفایل با Tailwind</title>
+  <!-- لینک CDN Tailwind (نیازی به نصب نیست) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <!-- کارت اصلی -->
+  <div class="bg-white p-6 rounded-xl shadow-2x1 w-80 text-center">
+    
+    <!-- عکس پروفایل -->
+    <img src="profile.jpg" alt="عکس من" class="w-24 h-24 rounded-2x1 mx-auto border-4 border-blue-500 object-cover">
+    
+    <!-- نام -->
+    <h1 class="text-2xl font-bold text-gray-800 mt-4">sanaz</h1>
+    
+    <!-- توضیحات -->
+    <p class="text-gray-600 mt-2">برنامه‌نویس فرانت‌اند و طراح گرافیک</p>
+    
+    <!-- لیست مهارت‌ها -->
+    <ul class="flex justify-center gap-2 mt-4">
+      <li class="bg-gray-200 px-3 py-1 rounded-full text-sm">HTML</li>
+      <li class="bg-gray-200 px-3 py-1 rounded-full text-sm">CSS</li>
+      <li class="bg-gray-200 px-3 py-1 rounded-full text-sm">react</li>
+      <li class="bg-gray-200 px-3 py-1 rounded-full text-sm">JavaScript</li>
+    </ul>
+    
+    <!-- دکمه -->
+    <button class="mt-6 bg-purple-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition">
+      تماس با من
+    </button>
+    
+  </div>
+
+</body>
+</html>
